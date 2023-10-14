@@ -153,7 +153,7 @@ Which of the above statements is/are true?\\
  $X$ and $Y$ are independent Poisson random variables, then $X+Y$ is also Poisson\\
  \begin{align}
  \pr{X=k,X+Y=n}&=pr\brak{X=k,Y=n-k}\\
- &=\frac{t_1^k}{k!}e^{-t_1}\frac{t_2^{n-k}}{(n-k)!}e^{-t_2}\\
+ &=\frac{(t_1)^k}{k!}e^{-t_1}\frac{(t_2)^{n-k}}{(n-k)!}e^{-t_2}\\
  &=e^{-(t_1+t_2)}\left(\frac{(t_1+t_2)^n}{n!}\right)\comb{n}{k}\left(\frac{t_1}{t_1+t_2}\right)^k\left(\frac{t_2}{t_1+t_2}\right)^{n-k} \label{38/1}
  \end{align}
  \begin{align}
@@ -166,6 +166,19 @@ Which of the above statements is/are true?\\
  &=\comb{n}{k}\left(\frac{t_1}{t_1+t_2}\right)^k\left(\frac{t_2}{t_1+t_2}\right)^{n-k}
  \end{align} 
  For the given question,
+ \begin{table}[h!]
+ \begin{center}
+    \begin{tabular}{|l|c|r|}
+    \hline
+    Parameter & Values \\
+    \hline
+    $t_1$ &  3\\
+    $t_1$&  5 \\
+    \hline
+    \end{tabular}
+    \end{center}
+    \caption{Table 1}
+\end{table}
  \begin{align}
  \pr{N(3)=3|N(5)=5}&=\comb{5}{3}\left(\frac{3}{2+3}\right)^3\left(\frac{2}{2+3}\right)^{2}\\
  &=\comb{5}{3}\left(\frac{3}{5}\right)^3\left(\frac{2}{5}\right)^{2}
