@@ -197,10 +197,6 @@ E(S_n)&=\int_{0}^{\infty} tf(t) \, dt\\
 &=\frac{n}{\lambda} \label{38/3}
 \end{align}
 The conditional expectation $E(S_n|N(t)=x)$ represents the expected time at which the $n^{th}$ event occurs at exactly $x$ events have occurred in the first $t$ units of time in a Poisson process with rate $\lambda$ is given by.\\
-\begin{align}
-E(S_n|N(t)=x)&=t+E(S_{n-x})\label{38/4}
-\end{align}
-from \eqref{38/3} and \eqref{38/4}\\
 By the law of total expectation,
 \begin{align}
 E(S_n | N(t) = x) &= E(E(S_n | N(t) = x, N(t))) \\
@@ -208,9 +204,9 @@ E(S_n | N(t) = x) &= E(E(S_n | N(t) = x, N(t))) \\
 &= E(E(S_x + S_{n-x} | N(t) = x))\\
 &=E(t + E(S_{n-x})) \\
 &=E(t) + E(E(S_{n-x}))\\
- &= t + E(S_{n-x})
+ &= t + E(S_{n-x}) \label{38/4}
  \end{align}
- From above result,
+ From \eqref{38/3} and \eqref{38/4}\\
  \begin{align}
  E(S_5|N(5)=3)&=5+E(S_2)\\
  &=5+2\\
