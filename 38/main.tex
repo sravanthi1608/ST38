@@ -184,11 +184,15 @@ Which of the above statements is/are true?\\
  &=\comb{5}{3}\left(\frac{3}{5}\right)^3\left(\frac{2}{5}\right)^{2}
  \end{align}
  Hence statement (a) is true.
-\item The expected value $E(S_n)$ of the time at which the $n_{th}$ event occurs in a Poisson process with rate $\lambda$ is\\
+\item $S_n$ is the sum of n rv's, each with the density function\\
 \begin{align}
-E(S_n)=\frac{n}{\lambda}
+f_X(x)=\lambda e^{-\lambda x}
 \end{align}
-PDF of gamma function is $\frac{\lambda^nt^{n-1}e^{-\lambda t}}{(n-1)!}$\\
+PDF of $S_n$ is \\
+\begin{align}
+f_{Sn}(t)=\frac{\lambda^nt^{n-1}e^{-\lambda t}}{(n-1)!}
+\end{align}
+The expected value $E(S_n)$ of the time at which the $n_{th}$ event occurs in a Poisson process with rate $\lambda$ is\\
 \begin{align}
 E(S_n)&=\int_{0}^{\infty} tf(t) \, dt\\
 &=\int_{0}^{\infty}\frac{\lambda^nt^ne^{-\lambda t}}{(n-1)!}\,dt \\
