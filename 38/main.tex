@@ -148,7 +148,7 @@ Which of the above statements is/are true?\\
   \end{align}
  here $\lambda$ is 1 
  \begin{align}
- pr\brak{N(t)=k} = \frac{(t)^k e^{-t}}{k!}\\
+ \pr{N(t)=k} = \frac{(t)^k e^{-t}}{k!}\\
  \end{align}
  $X$ and $Y$ are independent Poisson random variables, then $X+Y$ is also Poisson\\
  \begin{align}
@@ -184,39 +184,5 @@ Which of the above statements is/are true?\\
  &=\comb{5}{3}\left(\frac{3}{5}\right)^3\left(\frac{2}{5}\right)^{2}
  \end{align}
  Hence statement (a) is true.
-\item $S_n$ is the sum of n rv's, each with the density function\\
-\begin{align}
-f_X(x)=\lambda e^{-\lambda x}
-\end{align}
-PDF of $S_n$ is \\
-\begin{align}
-f_{Sn}(t)=\frac{\lambda^nt^{n-1}e^{-\lambda t}}{(n-1)!}
-\end{align}
-The expected value $E(S_n)$ of the time at which the $n_{th}$ event occurs in a Poisson process with rate $\lambda$ is\\
-\begin{align}
-E(S_n)&=\int_{0}^{\infty} tf(t) \, dt\\
-&=\int_{0}^{\infty}\frac{\lambda^nt^ne^{-\lambda t}}{(n-1)!}\,dt \\
-&=\frac{\lambda^n}{(n-1)!}\int_{0}^{\infty}t^ne^{-\lambda t} \,dt\\
-&=\frac{\lambda^n}{(n-1)!}\frac{n!}{\lambda ^{n+1}}\\
-&=\frac{n}{\lambda} \label{38/3}
-\end{align}
-The conditional expectation $E(S_n|N(t)=x)$ represents the expected time at which the $n^{th}$ event occurs at exactly $x$ events have occurred in the first $t$ units of time in a Poisson process with rate $\lambda$ is given by.\\
-By the law of total expectation,
-\begin{align}
-E(S_n | N(t) = x) &= E(E(S_n | N(t) = x, N(t))) \\
-&= E(E(S_x + S_{n-x} | N(t) = x, N(t) = x))\\
-&= E(E(S_x + S_{n-x} | N(t) = x))\\
-&=E(t + E(S_{n-x})) \\
-&=E(t) + E(E(S_{n-x}))\\
- &= t + E(S_{n-x}) \label{38/4}
- \end{align}
- From \eqref{38/3} and \eqref{38/4}\\
- \begin{align}
- E(S_5|N(5)=3)&=5+E(S_2)\\
- &=5+2\\
- &=7
- \end{align}
- Hence statement (b) is true.
 \end{enumerate}
-Both (a) and (b) are true.
 \end{document}
