@@ -118,85 +118,61 @@ Question : Let ${N(t)}_{t\ge 0}$ be a Poisson process with rate 1. Consider the 
 \begin{enumerate}[label=(\alph*)]
 \item $\pr{N(3)=3|N(5)=5}=\comb{5}{3}\left(\frac{3}{5}\right)^3 \left(\frac{2}{5}\right)^2$
 \item If $S_5$ denotes the time of occurrence of the $5^{th}$ event for the above Poisson process,then $E(S_5|N(5)=3)=7$ \\
-\end{enumerate}
 Which of the above statements is/are true?\\
+\end{enumerate}
 \begin{enumerate}[label=(\roman*)]
 \item only (a)
 \item only (b)
 \item Both (a) and (b)
 \item Neither (a) and (b)
 \end{enumerate}
+\hfill ( GATE ST 2023)\\
 \solution \\
-\begin{table}[h!]
- \begin{center}
-    \begin{tabular}{|l|c|r|}
-    \hline
-    Parameter & Values & Description\\
-    \hline
-    $X$ & $N(t_1)$ & poisson  \\
-    $Y$&  $N(t_2)$& random \\
-    $X+Y$&  $N(t_1+t_2)$& variables \\
-    \hline
-    \end{tabular}
-    \end{center}
-    \caption{Table 1}
-\end{table}
-\begin{enumerate}[label=(\alph*)]
-\item Using the Poisson probability formula,\\
- \begin{align}
- \pr{N(t)=k} =Po(t;k) =\frac{(\lambda t)^k e^{-\lambda t}}{k!} 
-  \end{align}
- here $\lambda$ is 1 
- \begin{align}
- \pr{N(t)=k} = \frac{(t)^k e^{-t}}{k!}\\
+%\fi
+(b) $S_n$ is the sum of n rv's, each with the density function\\
+\begin{align}
+f_X(t)=\lambda e^{-\lambda t}
+\end{align}
+Poisson probability formula,\\
+\begin{align}
+ \pr{N(t)=k} =\frac{(\lambda t)^k e^{-\lambda t}}{k!} 
+\end{align}
+CDF of $X$ is \\
+\begin{align}
+F_X(t)=\pr{X \leq t} =1-\pr{N(t)=0}=1-e^{-\lambda t}\\
+\end{align}
+PDF of $X$ is
+\begin{align}
+f_X(t)=\frac{d}{dt}{F_X(t)}=\lambda e^{-\lambda t}
+\end{align}
+PDF of $S_n$ is \\
+\begin{align}
+f_{Sn}(t)=\frac{\lambda^nt^{n-1}e^{-\lambda t}}{(n-1)!}
+\end{align}
+The expected value $E(S_n)$ of the time at which the $n_{th}$ event occurs in a Poisson process with rate $\lambda$ is\\
+\begin{align}
+E(S_n)&=\int_{0}^{\infty} tf(t) \, dt\\
+&=\int_{0}^{\infty}\frac{\lambda^nt^ne^{-\lambda t}}{(n-1)!}\,dt \\
+&=\frac{\lambda^n}{(n-1)!}\int_{0}^{\infty}t^ne^{-\lambda t} \,dt\\
+&=\frac{\lambda^n}{(n-1)!}\frac{n!}{\lambda ^{n+1}}\\
+&=\frac{n}{\lambda} \label{38/3}
+\end{align}
+The conditional expectation $E(S_n|N(t)=x)$ represents the expected time at which the $n^{th}$ event occurs at exactly $x$ events have occurred in the first $t$ units of time in a Poisson process with rate $\lambda$ is given by.\\
+By the law of total expectation,
+\begin{align}
+E(S_n | N(t) = x) &= E(E(S_n | N(t) = x, N(t))) \\
+&= E(E(S_x + S_{n-x} | N(t) = x, N(t) = x))\\
+&= E(E(S_x + S_{n-x} | N(t) = x))\\
+&=E(t + E(S_{n-x})) \\
+&=E(t) + E(E(S_{n-x}))\\
+ &= t + E(S_{n-x}) \label{38/4}
  \end{align}
- $X$ and $Y$ are independent Poisson random variables, then $X+Y$ is also Poisson\\
+ From \eqref{38/3} and \eqref{38/4}\\
  \begin{align}
- \pr{X=k,X+Y=n}&=pr\brak{X=k,Y=n-k}\\
- &=\frac{(t_1)^k}{k!}e^{-t_1}\frac{(t_2)^{n-k}}{(n-k)!}e^{-t_2}\\
- &=e^{-(t_1+t_2)}\left(\frac{(t_1+t_2)^n}{n!}\right)\comb{n}{k}\left(\frac{t_1}{t_1+t_2}\right)^k\left(\frac{t_2}{t_1+t_2}\right)^{n-k} \label{38/1}
+ E(S_5|N(5)=3)&=5+E(S_2)\\
+ &=5+2\\
+ &=7
  \end{align}
- \begin{align}
-  \pr{X+Y=n}=e^{-(t_1+t_2)}\left(\frac{(t_1+t_2)^n}{n!}\right)\label{38/2}
- \end{align}
-  From conditional probability,
-  from the equations \eqref{38/1} and \eqref{38/2}
- \begin{align}
- \pr{X=k|X+Y=n}&=\frac{\pr{X=k,Y=n-k}}{\pr{X+Y=n}}\\
- &=\comb{n}{k}\left(\frac{t_1}{t_1+t_2}\right)^k\left(\frac{t_2}{t_1+t_2}\right)^{n-k}
- \end{align} 
- For the given question,
- \begin{table}[h!]
- \begin{center}
-    \begin{tabular}{|l|c|r|}
-    \hline
-    Parameter & Values \\
-    \hline
-    $t_1$ &  3\\
-    $t_1$&  5 \\
-    \hline
-    \end{tabular}
-    \end{center}
-    \caption{Table 1}
-\end{table}
- \begin{align}
- \pr{N(3)=3|N(5)=5}&=\comb{5}{3}\left(\frac{3}{2+3}\right)^3\left(\frac{2}{2+3}\right)^{2}\\
- &=\comb{5}{3}\left(\frac{3}{5}\right)^3\left(\frac{2}{5}\right)^{2}
- \end{align}
- Hence statement (a) is true.
+ Hence statement (b) is true.\\
  
- Generation of poisson Random Variable from uniform in C language
- \begin{enumerate}[label=(\roman*)]
- \item Define the Poisson Random Variable Generator Function:\\
-In your program, define the poissonRandomVariable function to generate Poisson random variables with a given lambda parameter
-\item "lambda" is the mean parameter for the Poisson distribution, representing the average rate of events in the given interval.\\
-L is  exp(-lambda), where exp is the exponential function. This value represents the probability of having zero events in the interval.\\
-The function enters a loop that continues until p is less than or equal to L.
-\item rand() / (double)RAND\_MAX:\\ This generates a random variable
-\item the Main Function:\\
-"numSamples" controls how many random samples you want to generate.
-\item srand(time(NULL)):\\
-The "srand(time(NULL))" line seeds the random number generator using the current time to ensure different random sequences each time you run the program.
-\end{enumerate}
-\end{enumerate}
 \end{document}
