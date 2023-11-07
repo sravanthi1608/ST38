@@ -145,13 +145,17 @@ CDF of $X$ is \\
 \begin{align}
 F_X(t)&=\pr{X \leq t} \\
 &=1-\pr{N(t)=0}\\
-&=1-e^{-\lambda t}\\
+&=1-e^{-\lambda t}
 \end{align}
 PDF of $X$ is
 \begin{align}
 f_X(t)=\frac{d}{dt}{F_X(t)}=\lambda e^{-\lambda t}
 \end{align}
-PDF of $S_n$ is \\
+PDF of sum of n independent and identically distributed exponential random variables, can obtained by convolving $f_X(t)$
+\begin{align}
+f_{Sn}(t)&=f_X(t)*f_X(t)*...*f_X(t) 
+\end{align}
+ so we get PDF of $S_n$ as \\
 \begin{align}
 f_{Sn}(t)=\frac{\lambda^nt^{n-1}e^{-\lambda t}}{(n-1)!}
 \end{align}
