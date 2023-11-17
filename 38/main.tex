@@ -129,7 +129,23 @@ Which of the above statements is/are true?\\
 \hfill ( GATE ST 2023)\\
 \solution \\
 %\fi
-(b) A random variable $X$ said to have a Poisson distribution $Po(t)$ with parameter $t\geq 0$,\\
+(b)
+ \begin{table}[h!]
+ \begin{center}
+    \begin{tabular}{|l|c|r|}
+    \hline
+    Parameter & Values & Description\\
+    \hline
+    $X$ & $N(t)$ & poisson random variable \\
+    $\tau_1$ & & time interval to the first arrival\\
+    $S_n$ &  & $n^{th}$ random arrival point of Poission process \\
+    \hline
+    \end{tabular}
+    \end{center}
+    \caption{Table 1}
+\end{table}
+
+ A random variable $X$ said to have a Poisson distribution $Po(t)$ with parameter $t\geq 0$,\\
  \begin{align}
 \pr{X=k}=\pr{N(t)=k}= Po(t;k)=\frac{(\lambda t)^k e^{-\lambda t}}{k!}    \\
 \pr{X=0}= \pr{N(t)=0} =e^{-\lambda t}
@@ -139,7 +155,7 @@ $N(t)$ is the number of events that occur in the time $[0,t]$\\
 $\pr{N(t)=0}$ is the probability that there are no events in the time interval $[0,t]$\\
 CDF of $X$ is \\
 \begin{align}
-F_{\tau_1}(t)&=\pr{\tau_1 \leq t}=\pr{X>0} \\
+F_{\tau_1}(t)&=\pr{\tau_1 \leq t} \\
 &=1-\pr{N(t_0,t_0+t)=0}\\
 &=1-e^{-\lambda t}
 \end{align}
