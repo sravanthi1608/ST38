@@ -139,7 +139,7 @@ Which of the above statements is/are true?\\
     $X$ & poisson random variable \\
     $\tau_1$ &  time interval to the first arrival\\
     $S_n$ &  $n^{th}$ random arrival point of Poission process \\
-    $N(t)$ & Number of events occur\\
+    $N(t)$ & Number of events that occur in the time $[0,t]$\\
     $\lambda$ & rate of Poission process\\
     \hline
     \end{tabular}
@@ -147,13 +147,13 @@ Which of the above statements is/are true?\\
     \caption{Table 1}
 \end{table}
 
+
  A random variable $X$ said to have a Poisson distribution $Po(t)$ with parameter $t\geq 0$,\\
  \begin{align}
-\pr{N(t)=k}= Po(t;k)=\frac{(\lambda t)^k e^{-\lambda t}}{k!}    
+\pr{X=k}=\pr{N(t)=k}= Po(t;k)=\frac{(\lambda t)^k e^{-\lambda t}}{k!}    
 \end{align}
 Let $\tau_1 $ denote the time interval to the first arrival from any fixed point $t_0$\\
 $N(t)$ is the number of events that occur in the time $[0,t]$\\
-$\pr{N(t)=0}$ is the probability that there are no events in the time interval $[0,t]$\\
 Distribution function of $\tau_1$ is:\\
 \begin{align}
 F_{\tau_1}(t)&=\pr{\tau_1 \leq t} \\
