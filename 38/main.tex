@@ -129,35 +129,38 @@ Which of the above statements is/are true?\\
 \hfill ( GATE ST 2023)\\
 \solution \\
 %\fi
-(b) $S_n$ is the sum of n rv's, each with the density function\\
-\begin{align}
-f_X(t)=\lambda e^{-\lambda t}
-\end{align}
-A random variable $X$ said to have a Poisson distribution $Po(t)$ with parameter $t\geq 0$,\\
+(b) A random variable $X$ said to have a Poisson distribution $Po(t)$ with parameter $t\geq 0$,\\
  \begin{align}
 \pr{X=k}=\pr{N(t)=k}= Po(t;k)=\frac{(\lambda t)^k e^{-\lambda t}}{k!}    \\
 \pr{X=0}= \pr{N(t)=0} =e^{-\lambda t}
 \end{align}
-$X$ is the time of the first event in a Poission process\\
+Let $\tau_1 $ denote the time interval to the first arrival from any fixed point $t_0$\\
 $N(t)$ is the number of events that occur in the time $[0,t]$\\
 $\pr{N(t)=0}$ is the probability that there are no events in the time interval $[0,t]$\\
 CDF of $X$ is \\
 \begin{align}
-F_X(t)&=\pr{X \leq t} \\
-&=1-\pr{N(t)=0}\\
+F_{\tau_1}(t)&=\pr{\tau_1 \leq t}=\pr{X(t)>0} \\
+&=1-\pr{N(t_0,t_0+t)=0}\\
 &=1-e^{-\lambda t}
 \end{align}
-PDF of $X$ is
+PDF of $\tau_1 $ is
 \begin{align}
-f_X(t)=\frac{d}{dt}{F_X(t)}=\lambda e^{-\lambda t}
+f_{\tau_1} (t)=\frac{dF_{\tau_1} (t)}{dt}=\lambda e^{-\lambda t}, t\geq 0
 \end{align}
-PDF of sum of n independent and identically distributed exponential random variables, can obtained by convolving $f_X(t)$
+$S_n$ represent the $n^{th}$ random arrival point of Poission process\\
 \begin{align}
-f_{Sn}(t)&=f_X(t)*f_X(t)*...*f_X(t) 
+S_n=\sum_{i=1}^{n}\tau_i
+\end{align}
+Then,
+\begin{align}
+F_{S_n}(t)&=\pr{X(t)< n}\\
+&=1-\pr{X(t)\geq n}\\
+&=1-\sum_{k=0}^{n-1}\frac{(\lambda t)^k e^{-\lambda t}}{k!} 
 \end{align}
  so we get PDF of $S_n$ as \\
 \begin{align}
-f_{Sn}(t)=\frac{\lambda^nt^{n-1}e^{-\lambda t}}{(n-1)!}
+f_{S_n}(t)&=\frac{dF_{t_n} (t)}{dt}\\
+&=\frac{\lambda^nt^{n-1}e^{-\lambda t}}{(n-1)!}
 \end{align}
 The expected value $E(S_n)$ of the time at which the $n_{th}$ event occurs in a Poisson process with rate $\lambda$ is\\
 \begin{align}
